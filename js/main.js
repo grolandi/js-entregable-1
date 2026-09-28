@@ -92,13 +92,13 @@ function getSignoZodiaco(esteMes, esteDia) {
 // Calcular signo
 getSignoZodiaco(mes, dia);
 
-// Calcular edad (resta el año de nacimiento al año actual)
+// Calcular edad
 const edad = anioActual - anio;
 
 // Mostrar resultado
 console.log(titulo + " - " + descripcion);
 console.log("Nombre: " + nombre);
 console.log("Fecha de nacimiento: " + dia + "/" + mes + "/" + anio);
-console.log("Edad: " + edad + " años (o " + (edad - 1) + " si todavía no cumpliste este año)");
+console.log("Cumplís: " + edad + " años");
 console.log("Tu signo es: " + signo);
 alert("Hola " + nombre + ", este año cumplís " + edad + " años y tu signo es " + signo);
