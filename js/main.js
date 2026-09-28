@@ -2,10 +2,14 @@
 const titulo = "Mi Primer Script Interactivo";
 const descripcion = "Calculador de Signos";
 
-// Obtener fecha de nacimiento
-alert("Voy a calcular tu signo del Zodiaco, para esto necesito tu mes y día de nacimiento")
-let mes = prompt("Mes de nacimiento = No poner 0 adelante de los números (Mayo = 5 no 05)");
-let dia = prompt("Día de nacimiento = No poner 0 adelante de los números (3 no 03)");
+const anioActual = 2026;
+
+// Obtener datos
+alert("Voy a calcular tu edad y tu signo del Zodiaco, para esto necesito tu nombre y tu fecha de nacimiento")
+const nombre = prompt("¿Cómo te llamás?");
+const anio = parseInt(prompt("Año de nacimiento (ej. 1990)"));
+const mes = parseInt(prompt("Mes de nacimiento = No poner 0 adelante de los números (Mayo = 5 no 05)"));
+const dia = parseInt(prompt("Día de nacimiento = No poner 0 adelante de los números (3 no 03)"));
 
 // Lógica de los signos
 let signo;
@@ -86,11 +90,15 @@ function getSignoZodiaco(esteMes, esteDia) {
 }
 
 // Calcular signo
-getSignoZodiaco(Number(mes), Number(dia));
+getSignoZodiaco(mes, dia);
+
+// Calcular edad (resta el año de nacimiento al año actual)
+const edad = anioActual - anio;
 
 // Mostrar resultado
 console.log(titulo + " - " + descripcion);
-console.log("Día nacimiento: " + dia);
-console.log("Mes nacimiento: " + mes);
+console.log("Nombre: " + nombre);
+console.log("Fecha de nacimiento: " + dia + "/" + mes + "/" + anio);
+console.log("Edad: " + edad + " años (o " + (edad - 1) + " si todavía no cumpliste este año)");
 console.log("Tu signo es: " + signo);
-alert("Tu signo es: "+ signo)
+alert("Hola " + nombre + ", este año cumplís " + edad + " años y tu signo es " + signo);
